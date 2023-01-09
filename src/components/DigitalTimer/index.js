@@ -17,7 +17,11 @@ class DigitalTimer extends Component {
     super(props)
     this.state = initialState
   }
-
+  
+  clearInterval() {
+    clearInterval(this.timerID)
+  }
+  
   runTimer = () => {
     const {elapsedTimeInSeconds, timerLimitInMinutes} = this.state
     const isTimerCompleted = timerLimitInMinutes * 60 === elapsedTimeInSeconds
